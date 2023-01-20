@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Widerstandsberechnung</title>
+</head>
+<body>
+<form th:action="${action}" method="get">
+    <h1> Widerstandsberechnung</h1>
+    <div th:text="${msg}"></div>
+    <div th:if="${msg!=null && msg.length()>0}" th:text="${msg}" style="color:red;" />
+    R1 = <input type="text" name="r1" th:value="${wid!=null?wid.getR1():''}"/><br>
+    R2 = <input type="text" name="r2" th:value="${wid!=null?wid.getR2():null}"/><br>
+    <input type="submit" th:value="ok" th:text="'OK'"/>
+</form>
+</body>
+</html>
