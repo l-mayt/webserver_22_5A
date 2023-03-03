@@ -27,10 +27,15 @@ public class DataService {
             }
             ret.add(line);
 
+            // Schleife über alle Datensätze
             while (rs.next()) {
-
+                // Einlesen eines Datansatzes
+                line=new Vector<>();
+                for (int i = 0; i<cols; i++)
+                    line.add(rs.getString(i));
+                ret.add(line);
             }
-
+            return ret;
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
